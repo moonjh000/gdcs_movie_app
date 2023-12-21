@@ -32,4 +32,6 @@ class TMDBMovieListModel extends Equatable {
         totalPages,
         totalResults,
       ];
+
+  copyWith({int? page, required List<TMDBMovieListItemModel> results}) {}
 }

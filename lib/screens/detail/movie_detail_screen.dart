@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gdsc_movie_app/constants/api_endpoints.dart';
 import 'package:gdsc_movie_app/models/tmdb/tmdb_movie_listitem_model.dart';
+import 'package:gdsc_movie_app/screens/detail/widget/detail_widget.dart';
 
 class MovieDetailScreen extends StatelessWidget {
   final TMDBMovieListItemModel? movie;
@@ -19,37 +20,26 @@ class MovieDetailScreen extends StatelessWidget {
         foregroundColor: Colors.white,
         title: Text(movie?.originalTitle ?? 'Movie Detail'),
       ),
-      body: Stack(
+      body: ListView(
         children: [
           // Background Image
-          Image.network(
-            '${ApiEndpoints.tmdbImage500}/${movie?.backdropPath ?? ''}',
-            width: double.infinity,
-            height: double.infinity,
-          ),
-          // Content
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  '제목: ${movie?.originalTitle ?? 'N/A'}',
-                  style: const TextStyle(fontSize: 30),
-                ),
-                const SizedBox(height: 8.0),
-                Text(
-                  '개봉일: ${movie?.releaseDate ?? 'N/A'}',
-                  style: const TextStyle(fontSize: 16),
-                ),
-                const SizedBox(height: 8.0),
-                Text(
-                  '평점: ${movie?.voteAverage ?? 'N/A'}',
-                  style: const TextStyle(fontSize: 16),
-                ),
-              ],
+          Container(
+            color: Colors.blueGrey.shade300,
+            child: ClipRRect(
+              child: Image.network(
+                '${ApiEndpoints.tmdbImage500}/${movie?.posterPath}',
+                width: double.infinity,
+                height: 500,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
+          DetailContent(
+            originalTitle: movie?.originalTitle ?? 'N/A',
+            releaseDate: movie?.releaseDate ?? 'N/A',
+            voteAverage: movie?.voteAverage ?? 0.0,
+            overview: movie?.overview ?? 'N/A',
+          )
         ],
       ),
     );

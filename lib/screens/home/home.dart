@@ -6,7 +6,9 @@ import 'package:gdsc_movie_app/screens/home/widgets/home_card_widget.dart';
 import 'package:gdsc_movie_app/screens/home/widgets/home_sliver_appbar.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
+  HomeScreen({
+    super.key,
+  });
 
   final TMDBMovieRepository _repository = TMDBMovieRepository();
 

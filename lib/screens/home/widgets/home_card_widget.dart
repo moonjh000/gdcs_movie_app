@@ -47,9 +47,7 @@ class HomeCardWidget extends StatelessWidget {
                         const EdgeInsets.symmetric(horizontal: Sizes.size10),
                     separatorBuilder: (context, index) => Gaps.h10,
                     itemBuilder: (context, index) => HomeMovieCardWidget(
-                      title:
-                          snapshot.data?.results?[index].originalTitle ?? 'N/A',
-                      image: snapshot.data?.results?[index].posterPath ?? '',
+                      movie: snapshot.data?.results?[index],
                     ),
                     itemCount: snapshot.data?.results?.length ?? 0,
                   );

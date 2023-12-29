@@ -33,7 +33,7 @@ class DetailContent extends StatelessWidget {
             child: Text(
               originalTitle,
               style: const TextStyle(
-                fontSize: 30,
+                fontSize: Sizes.size24,
                 color: Colors.white,
               ),
             ),
@@ -49,7 +49,7 @@ class DetailContent extends StatelessWidget {
             child: Text(
               '개봉일: $releaseDate',
               style: const TextStyle(
-                fontSize: 16,
+                fontSize: Sizes.size16,
                 color: Colors.white,
               ),
             ),
@@ -65,7 +65,7 @@ class DetailContent extends StatelessWidget {
             child: Text(
               '평점: ${voteAverage.toStringAsFixed(2)}',
               style: const TextStyle(
-                fontSize: 16,
+                fontSize: Sizes.size16,
                 color: Colors.white,
               ),
             ),
@@ -81,7 +81,7 @@ class DetailContent extends StatelessWidget {
             child: Text(
               overview,
               style: const TextStyle(
-                fontSize: 16,
+                fontSize: Sizes.size12,
                 color: Colors.white,
               ),
               softWrap: true,

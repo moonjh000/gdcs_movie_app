@@ -22,16 +22,11 @@ class MovieDetailScreen extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          // Background Image
           Container(
             color: Colors.blueGrey.shade300,
-            child: ClipRRect(
-              child: Image.network(
-                '${ApiEndpoints.tmdbImage500}/${movie?.posterPath}',
-                width: double.infinity,
-                height: 500,
-                fit: BoxFit.cover,
-              ),
+            child: Image.network(
+              '${ApiEndpoints.tmdbImage500}/${movie?.posterPath}',
+              width: double.infinity,
             ),
           ),
           DetailContent(
